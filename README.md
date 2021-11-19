@@ -36,14 +36,20 @@ Download the scripts and save it to a known path/location. No special installati
   • scikit-learn (Anaconda link)
 
 Additional tools for used for mapping and general processing of high throughput sequencing data, including STAR, samtools and bedtools. 
-•	STAR v2.7.1+
-•	samtools v1.1+
-•	bedtools v2.22+
-For visualization of the results, we recommend IGV, which has features for grouping alignments based on tags, such as DG and NG that we implemented here. IGV can also directly visualize DG summary information and RNA secondary structures. VARNA is recommended for visualizing RNA secondary structures in a variety of formats, including
-•	IGV v2.4+
-•	VARNA v1.0+
 
-2.2	System requirements and tests
+  •	STAR v2.7.1+
+
+  •	samtools v1.1+
+  
+  •	bedtools v2.22+
+
+For visualization of the results, we recommend IGV, which has features for grouping alignments based on tags, such as DG and NG that we implemented here. IGV can also directly visualize DG summary information and RNA secondary structures. VARNA is recommended for visualizing RNA secondary structures in a variety of formats, including
+
+  •	IGV v2.4+
+  
+  •	VARNA v1.0+
+
+## 2.2	System requirements and tests
 
 The programs are generally run in x86-64 compatible processors, including 64 bit Linux or Mac OS X, if there is enough memory. Read mapping against mammalian genomes using STAR requires at least 30G memory. Alignment classification typically requires 100G memory. As a result, these two steps should be run in a cluster with large memory.
 
@@ -60,7 +66,8 @@ the directory:
  
 •	BAM/SAM file containing aligned reads from the sample of interest. Ensure that the BAM/SAM file was mapped using STAR with a set of a set of optimized parameters as follows:
 
-STAR --runMode alignReads --genomeDir /path/to/index --readFilesIn /path/to/reads/files --outFileNamePrefix /path/to/output/prefix --genomeLoad NoSharedMemory --outReadsUnmapped Fastx  --outFilterMultimapNmax 10 --outFilterScoreMinOverLread 0 --outSAMattributes All --outSAMtype BAM Unsorted SortedByCoordinate --alignIntronMin 1 --scoreGap 0 --scoreGapNoncan 0 --scoreGapGCAG 0 --scoreGapATAC 0 --scoreGenomicLengthLog2scale -1 --chimOutType WithinBAM HardClip --chimSegmentMin 5 --chimJunctionOverhangMin 5 --chimScoreJunctionNonGTAG 0 -- chimScoreDropMax 80 --chimNonchimScoreDropMin 20
+           
+       STAR --runMode alignReads --genomeDir /path/to/index --readFilesIn /path/to/reads/files --outFileNamePrefix /path/to/output/prefix --genomeLoad NoSharedMemory --outReadsUnmapped Fastx  --outFilterMultimapNmax 10 --outFilterScoreMinOverLread 0 --outSAMattributes All --outSAMtype BAM Unsorted SortedByCoordinate --alignIntronMin 1 --scoreGap 0 --scoreGapNoncan 0 --scoreGapGCAG 0 --scoreGapATAC 0 --scoreGenomicLengthLog2scale -1 --chimOutType WithinBAM HardClip --chimSegmentMin 5 --chimJunctionOverhangMin 5 --chimScoreJunctionNonGTAG 0 -- chimScoreDropMax 80 --chimNonchimScoreDropMin 20
 
 •	Gene bed file should contain six required BED fileds: Chrom, ChromStart, ChromEnd, Name, Score, Strand. 
 
