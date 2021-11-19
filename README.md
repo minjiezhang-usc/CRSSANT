@@ -22,7 +22,7 @@ The CRSSANT pipeline consists of five steps:
   
 
 
-# 2.	System requirements and prepare environment
+# 2.	System and environment requirements
 
 ## 2.1 Download and prepare environment
 Download the scripts and save it to a known path/location. No special installation is needed, but the python package dependencies need to be properly resolved before use. You will need Python version 3.6+ and the following Python packages. We recommend downloading the latest versions of these packages using the Ananconda/Bioconda package manager. Currently, the NetworkX version only works with python 3.6, but not higher versions.
@@ -64,14 +64,14 @@ placed in a single location. Users can process any crosslink-ligation data using
 pipeline. Navigate to a directory of your choice in your local machine and place the following files in
 the directory:
  
-•	BAM/SAM file containing aligned reads from the sample of interest. Ensure that the BAM/SAM file was mapped using STAR with a set of a set of optimized parameters as follows:
+•	**BAM/SAM** file containing aligned reads from the sample of interest. Ensure that the BAM/SAM file was mapped using STAR with a set of a set of optimized parameters as follows:
 
            
     STAR --runMode alignReads --genomeDir /path/to/index --readFilesIn /path/to/reads/files --outFileNamePrefix /path/to/output/prefix --genomeLoad NoSharedMemory --outReadsUnmapped Fastx  --outFilterMultimapNmax 10 --outFilterScoreMinOverLread 0 --outSAMattributes All --outSAMtype BAM Unsorted SortedByCoordinate --alignIntronMin 1 --scoreGap 0 --scoreGapNoncan 0 --scoreGapGCAG 0 --scoreGapATAC 0 --scoreGenomicLengthLog2scale -1 --chimOutType WithinBAM HardClip --chimSegmentMin 5 --chimJunctionOverhangMin 5 --chimScoreJunctionNonGTAG 0 -- chimScoreDropMax 80 --chimNonchimScoreDropMin 20
 
-•	Gene bed file should contain six required BED fileds: Chrom, ChromStart, ChromEnd, Name, Score, Strand. 
+•	**Gene bed** file should contain six required BED fileds: Chrom, ChromStart, ChromEnd, Name, Score, Strand. 
 
-•	GTF file, the annotation file containing the splicing junctions should be in GTF format.
+•	**GTF** file, the annotation file containing the splicing junctions should be in GTF format.
 
 Now that all the input files are ready, the CRSSANT pipeline can be run by using the following command, after navigating to the folder that contains the Python scripts:
 
@@ -96,13 +96,13 @@ outprefix:	output prefix
 
 The output files from CRSSANT are gathered in four folders:
 
-•	alignments_classsify: created at step of classify alignments
+•	*alignments_classsify*: created at step of classify alignments
 
-•	alignments_statistics: created at step of classify alignments
+•	*alignments_statistics*: created at step of Segment and gap statistics
 
-•	alignments_DGs: created at step of DGs assembly
+•	*alignments_DGs*: created at step of DGs assembly
 
-•	alignments_TGs: created at step of TGs assembly
+•	*alignments_TGs*: created at step of TGs assembly
 
 
 ## 4.1 alignments_classsify
