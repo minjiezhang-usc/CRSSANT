@@ -10,16 +10,17 @@ CRSSANT is written in Python and available as source code that you can download 
 
 The CRSSANT pipeline consists of five steps:
 
-  •	Step 1: Classify alignments
+•	Step 1: Classify alignments
   
-  •	Step 2: Segment and gap statistics
+•	Step 2: Segment and gap statistics
   
-  •	Step 3: Filter spliced and short gaps
+•	Step 3: Filter spliced and short gaps
   
-  •	Step 4: Cluster gap1 and trans alignments to DGs
+•	Step 4: Cluster gap1 and trans alignments to DGs
   
-  •	Step 5: Cluster gapm alignments to TGs
+•	Step 5: Cluster gapm alignments to TGs
   
+
 
 
 # 2.	System and environment requirements
@@ -27,27 +28,27 @@ The CRSSANT pipeline consists of five steps:
 ## 2.1 Download and prepare environment
 Download the scripts and save it to a known path/location. No special installation is needed, but the python package dependencies need to be properly resolved before use. You will need Python version 3.6+ and the following Python packages. We recommend downloading the latest versions of these packages using the Ananconda/Bioconda package manager. Currently, the NetworkX version only works with python 3.6, but not higher versions.
 
-  •	NetworkX v2.1+ (Anaconda link)
+  •	[NetworkX v2.1+](https://networkx.org) ([Anaconda link](https://anaconda.org/anaconda/networkx))
   
-  •	NumPy (Anaconda link)
+  •	[NumPy](https://numpy.org) ([Anaconda link](https://anaconda.org/anaconda/numpy))
   
-  •	SciPy (Anaconda link)
+  •	[SciPy](https://scipy.org) ([Anaconda link](https://anaconda.org/anaconda/scipy))
   
-  • scikit-learn (Anaconda link)
+  • [scikit-learn](https://scikit-learn.org/stable/) ([Anaconda link](https://anaconda.org/anaconda/scikit-learn))
 
 Additional tools for used for mapping and general processing of high throughput sequencing data, including STAR, samtools and bedtools. 
 
-  •	STAR v2.7.1+
+  •	[STAR v2.7.1+](https://github.com/alexdobin/STAR)
 
-  •	samtools v1.1+
+  •	[samtools v1.1+](http://www.htslib.org)
   
-  •	bedtools v2.22+
+  •	[bedtools v2.22+](https://bedtools.readthedocs.io/en/latest/)
 
 For visualization of the results, we recommend IGV, which has features for grouping alignments based on tags, such as DG and NG that we implemented here. IGV can also directly visualize DG summary information and RNA secondary structures. VARNA is recommended for visualizing RNA secondary structures in a variety of formats, including
 
-  •	IGV v2.4+
+  •	[IGV v2.4+](https://software.broadinstitute.org/software/igv/)
   
-  •	VARNA v1.0+
+  •	[VARNA v1.0+](http://varna.lri.fr)
 
 ## 2.2	System requirements and tests
 
@@ -58,6 +59,8 @@ Test datasets and example output files are provided for all steps except STAR ma
 
 
 # 3.	Running CRSSANT on a local mechine
+
+## 3.1 Input files of CRSSANT
 
 Before running CRSSANT, the input files (such as the ones provided in the demo dataset) need to be
 placed in a single location. Users can process any crosslink-ligation data using the CRSSANT
@@ -73,23 +76,26 @@ the directory:
 
 •	**GTF** file, the annotation file containing the splicing junctions should be in GTF format.
 
+## 3.2 Running CRSSANT
+
 Now that all the input files are ready, the CRSSANT pipeline can be run by using the following command, after navigating to the folder that contains the Python scripts:
 
     $ python  run_CRSSANT.py   input_dir   output_dir   sample_name   Gtf   idloc   genesfile  outprefix
     
-InputDir: 	Full path to the directory where the input files exist
+**InputDir**: 	Full path to the directory where the input files exist
 
-OutputDir: 	Full path to the directory where the output files will be saved
-    
-SampleName: 	Name of the sample 
-    
-Gtf:		The annotation file containing the splicing junctions
-    
-Idloc:		Column number of the transcript_ID field in GTF files, is usually field 11. 
-    
-genesfile:	gene annotations (BED)
+**OutputDir**: 	Full path to the directory where the output files will be saved
 
-outprefix:	output prefix
+**SampleName**: 	Name of the sample
+
+**Gtf**:		The annotation file containing the splicing junctions
+
+**Idloc**:		Column number of the transcript_ID field in GTF files, is usually field 11
+
+**genesfile**:	gene annotations (BED)
+
+**outprefix**:	output prefix
+
 
 
 # 4.	Output of CRSSANT
