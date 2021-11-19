@@ -9,13 +9,11 @@ Briefly, the CRSSANT pipeline operates as follows. First, sequencing reads that 
 CRSSANT is written in Python and available as source code that you can download and run directly on your own machine (no compiling needed). An earlier version of the DG assembly method is available here: (https://github.com/ihwang/CRSSANT). For more about the CRSSANT pipeline, please see the bioRxiv preprint by Zhang et al. 2021.
 
 The CRSSANT pipeline consists of five steps:
-•	Step 1: Classify alignments
-
-•	Step 2: Segment and gap statistics
-
-•	Step 3: Filter spliced and short gaps
-•	Step 4: Cluster gap1 and trans alignments to DGs
-•	Step 5: Cluster gapm alignments to TGs
+  •	Step 1: Classify alignments
+  •	Step 2: Segment and gap statistics
+  •	Step 3: Filter spliced and short gaps
+  •	Step 4: Cluster gap1 and trans alignments to DGs
+  •	Step 5: Cluster gapm alignments to TGs
 
 
 # 2.	System requirements and prepare environment
