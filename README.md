@@ -1,5 +1,4 @@
-# CRSSANT
-CRSSANT: Cross-linked RNA Secondary Structure Analysis using Network Techniques
+# CRSSANT: Cross-linked RNA Secondary Structure Analysis using Network Techniques
 
 # 1.	Overview
 
@@ -11,7 +10,9 @@ CRSSANT is written in Python and available as source code that you can download 
 
 The CRSSANT pipeline consists of five steps:
 •	Step 1: Classify alignments
+
 •	Step 2: Segment and gap statistics
+
 •	Step 3: Filter spliced and short gaps
 •	Step 4: Cluster gap1 and trans alignments to DGs
 •	Step 5: Cluster gapm alignments to TGs
