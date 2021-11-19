@@ -67,7 +67,7 @@ placed in a single location. Users can process any crosslink-ligation data using
 pipeline. Navigate to a directory of your choice in your local machine and place the following files in
 the directory:
  
-•	**BAM/SAM** file containing aligned reads from the sample of interest. Ensure that the BAM/SAM file was mapped using STAR with a set of a set of optimized parameters as follows:
+•	**BAM/SAM** file containing aligned reads from the sample of interest. Ensure that the BAM/SAM file was generated using STAR with a set of optimized parameters as follows:
 
            
     STAR --runMode alignReads --genomeDir /path/to/index --readFilesIn /path/to/reads/files --outFileNamePrefix /path/to/output/prefix --genomeLoad NoSharedMemory --outReadsUnmapped Fastx  --outFilterMultimapNmax 10 --outFilterScoreMinOverLread 0 --outSAMattributes All --outSAMtype BAM Unsorted SortedByCoordinate --alignIntronMin 1 --scoreGap 0 --scoreGapNoncan 0 --scoreGapGCAG 0 --scoreGapATAC 0 --scoreGenomicLengthLog2scale -1 --chimOutType WithinBAM HardClip --chimSegmentMin 5 --chimJunctionOverhangMin 5 --chimScoreJunctionNonGTAG 0 -- chimScoreDropMax 80 --chimNonchimScoreDropMin 20
@@ -82,19 +82,19 @@ Now that all the input files are ready, the CRSSANT pipeline can be run by using
 
     $ python  run_CRSSANT.py   input_dir   output_dir   sample_name   Gtf   idloc   genesfile  outprefix
     
-**InputDir**: 	Full path to the directory where the input files exist
+**InputDir**: 	  Full path to the directory where the input files exist
 
-**OutputDir**: 	Full path to the directory where the output files will be saved
+**OutputDir**:   	Full path to the directory where the output files will be saved
 
 **SampleName**: 	Name of the sample
 
-**Gtf**:		The annotation file containing the splicing junctions
+**Gtf**:		      The annotation file containing the splicing junctions
 
-**Idloc**:		Column number of the transcript_ID field in GTF files, is usually field 11
+**Idloc**:		    Column number of the transcript_ID field in GTF files, is usually field 11
 
-**genesfile**:	gene annotations (BED)
+**genesfile**:	  gene annotations (BED)
 
-**outprefix**:	output prefix
+**outprefix**:	  output prefix
 
 
 
