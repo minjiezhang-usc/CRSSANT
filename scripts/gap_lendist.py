@@ -18,8 +18,6 @@
 """
 Created on Tue Nov 01 2021
 
-@author: Zhipeng Lu, 2020, zhipengluchina@gmail.com
-
 gap_lendist.py, a simple script to plot the length of gaps (N). The input file
 can be any type of SAM. For example, from the direct output of STAR
 we only have the distribution from normally gapped reads. 
