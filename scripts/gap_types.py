@@ -17,8 +17,6 @@
 
 
 """
-@ Zhipeng Lu, Zhipengluchina@gmail.com
-
 Table of Contents
 0. introduction to the pipeline
 1. input and output setup
