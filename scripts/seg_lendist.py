@@ -17,9 +17,6 @@
 
 """
 Created on Tue Nov 01 2021
-
-@author: Zhipeng Lu, 2020, zhipengluchina@gmail.com
-
 This script calculates the size distribution of each segment in STAR alignments. 
 """
 
